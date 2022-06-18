@@ -212,17 +212,18 @@ nlu:
 
 - intent : business_domain
   examples: |
-    - I am [looking] {"entity":"look_only","value":"true"} to buy {"entity":"purchase_category","value":"buy"} a land.
-    - I am [looking] {"entity":"look_only","value":"true"} to sell {"entity":"purchase_category","value":"sell"} a land. 
+    - I am just [looking] {"entity":"look_only","value":"true"} to buy {"entity":"purchase_category","value":"buy"} a land.
+    - I am just [looking] {"entity":"look_only","value":"true"} to sell {"entity":"purchase_category","value":"sell"} a land. 
     - Hey! [Can] {"entity":"look_only","value":"false"} I buy {"entity":"purchase_category","value":"buy"} a land 
-    - Is there anything I [can] {"entity":"look_only","value":"true"} house for sell {"entity":"purchase_category","value":"sell"}?
-    - [Can] {"entity":"look_only","value":"true"} a land be selled {"entity":"purchase_category","value":"sell"}?
-    - I [want] {"entity":"look_only","value":"true"} to sell {"entity":"purchase_category","value":"sell"} a house.
-    - I [want] {"entity":"look_only","value":"true"} to rent {"entity":"purchase_category","value":"rent"} a car .
-    - I [want] {"entity":"look_only","value":"true"} a car at rent {"entity":"purchase_category","value":"rent"} . 
-    - I [have] {"entity":"look_only","value":"true"} to sell {"entity":"purchase_category","value":"sell"} a car.
-    - I am [trying] {"entity":"look_only","value":"true"} selling {"entity":"purchase_category","value":"sell"} a house .
-    - I am [trying] {"entity":"look_only","value":"true"} buying  {"entity":"purchase_category","value":"buy"}a house
+    - Is there anything I [can] {"entity":"look_only","value":"false"} house for sell {"entity":"purchase_category","value":"sell"}?
+    - [Can] {"entity":"look_only","value":"false"} a land be selled {"entity":"purchase_category","value":"sell"}?
+    - I [want] {"entity":"look_only","value":"false"} to sell {"entity":"purchase_category","value":"sell"} a house.
+    - I [want] {"entity":"look_only","value":"false"} to rent {"entity":"purchase_category","value":"rent"} a car .
+    - I [want] {"entity":"look_only","value":"false"} a car at rent {"entity":"purchase_category","value":"rent"} . 
+    - I [have] {"entity":"look_only","value":"false"} to sell {"entity":"purchase_category","value":"sell"} a car.
+    - I am [trying] {"entity":"look_only","value":"false"} selling {"entity":"purchase_category","value":"sell"} a house .
+    - I am [trying] {"entity":"look_only","value":"false"} buying  {"entity":"purchase_category","value":"buy"}a house
+    - I am here to [see] {"entity":"look_only","value":"true"} any available land {"entity":"purchase_category","value":"buy"}
 - intent: name
   examples: |
     - [ramesh] (name)
