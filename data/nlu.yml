@@ -1,0 +1,254 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent : listings
+  examples: |
+    - Show me the list
+    - Can I get the list?
+    - I need to see the houses list
+    - I want to chose from the house list
+    - I want the list of land
+
+- intent : eoi_form
+  examples: |
+    - Form where I can fill my info
+    - A form to fill up my information
+    - Information form
+    - My information input form
+    - Form for my information
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: reply_name
+  examples: |
+    - My name is [Priyanka] (user_name)
+    - I am [Shushant] (user_name)
+    - [Aman] (user_name) here !
+    - This is [Raman] (user_name)
+    - Hi I am [Adarsh] (user_name)
+    - Hey [Adarsh] (user_name) here
+    - Thanks for asking ,Its [Adarsh] (user_name)here
+    - Actually I am [Adarsh] (user_name)
+    - [Adarsh] (user_name)
+    - [Amulya] (user_name) is my name
+    - My name is [Robb] (user_name)
+    - It's [Rob] (user_name) here
+    - [Robot] (user_name) speaking
+    - [Roboerto] (user_name) on the other side
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: mood_happy
+  examples: |
+    - I am feeling great
+    - Hey I feel so good
+    - I am at my best
+    - I am delightful
+    - I am so glad
+    - I am greatful
+    - I am awesome
+
+- intent: email_id
+  examples: |
+    - [saitma_123@gmail.com] (email)
+    - [abc129@gmail.com] (email)
+    - [hero_academy123@gmail.com] (email)
+    - [peronal.id234@gmail.com] (email)
+    - [shaktiman@gmail.com] (email)
+    - [nepal.nepali@hotail.com] (email)
+    - [nssc_contactcenter@nasa.gov] (email)
+    - [sita_rai976@hotmail.com] (email)
+    - [hero@gmail.com] (email)
+    - [manoj.otaku@gmail.com] (email)
+    - [naruto.konoha122@hotmail.com] (email)
+    - [abc123.aaa@gmail.com] (email)
+    - [superman_blackV@yahoo.com] (email)
+    - [spidey.peter779@gmail.com] (email)
+    - [mason_mount19@chelseafc.com] (email)
+    - [chelseafc@yahoo.com] (email)
+    - [liverpool.reds@gmail.com] (email)
+    - [rajiv@hotmail.com] (email)
+    - [ramesh@yahoo.com] (email)
+    - [salman.khan@gmail.com] (email)
+    - [abcdg@gmail.com] (email)
+    - [sangam_upreti@gmail.com] (email)
+    - [abc123@gmail.com] (email)
+    - [raja.ram@gmail.com] (email)
+
+
+- intent: number
+  examples: |
+    - [9843208745] (number)
+    - [9874120356] (number)
+    - [9840123777] (number)
+    - [9801234789] (number)
+    - [9800112365] (number)
+    - [9841012365] (number)
+    - [9804777789] (number)
+    - [14523127895] (number)
+    - [7789541230] (number)
+    - [9874512035] (number)
+    - [7410236985] (number)
+    - [+9779841012365] (number)
+    - [0198308888] (number)
+    - [01433603] (number)
+    - [+977014333603] (number)
+    - [04200000000420019999] (number)
+    - [04201000000420109999] (number)
+    - [+9779813620237] (number)
+    - [+9779845124567] (number)
+    - [9845779519] (number)
+    - [98667766] (number)
+    - [9845775621] (number)
+
+- intent: out_of_scope
+  examples: |
+    - You are useless
+    - This does not work
+    - what the fuck is going on?
+    - What is wrong with this universe?
+    - capital city of nepal
+    - What is wrong these days?
+    - I am so tired
+    - I don't want to chat in this bot.
+    - This chatbot is not good.
+    - Why so high interest rate?
+    - This company is fraud.
+    - play game
+    - fuck you
+    - asshole
+    - you bitch
+    - bitch
+    - fucking shit
+    - you piece of shit
+    - oov oov oov
+    - haahah hahaha
+    - what is the power of earth
+    - what is the size of moon
+    - tell me a joke
+    - sing me a song
+    - i want to hear a story
+    - what is your salary
+    - show me the map of Nepal
+    - show me the places to visit
+    - lets play a game
+    - who will win the euro cup
+    - blasbdfsd blfbsdlfbl sdbf
+    - oov oov
+    - oov
+    - sahdnafa
+    - huaweaud
+    - sadakjar
+    - ritikidhir
+
+- intent : agent_time 
+  examples: |
+    - Time with the agent 
+    - I want to book time with an agent 
+    - I need an agent to book a meeting 
+    - I need an agent 
+
+
+- intent : business_domain
+  examples: |
+    - I am [looking] {"entity":"look_only","value":"true"} to buy {"entity":"purchase_category","value":"buy"} a land.
+    - I am [looking] {"entity":"look_only","value":"true"} to sell {"entity":"purchase_category","value":"sell"} a land. 
+    - Hey! [Can] {"entity":"look_only","value":"false"} I buy {"entity":"purchase_category","value":"buy"} a land 
+    - Is there anything I [can] {"entity":"look_only","value":"true"} house for sell {"entity":"purchase_category","value":"sell"}?
+    - [Can] {"entity":"look_only","value":"true"} a land be selled {"entity":"purchase_category","value":"sell"}?
+    - I [want] {"entity":"look_only","value":"true"} to sell {"entity":"purchase_category","value":"sell"} a house.
+    - I [want] {"entity":"look_only","value":"true"} to rent {"entity":"purchase_category","value":"rent"} a car .
+    - I [want] {"entity":"look_only","value":"true"} a car at rent {"entity":"purchase_category","value":"rent"} . 
+    - I [have] {"entity":"look_only","value":"true"} to sell {"entity":"purchase_category","value":"sell"} a car.
+    - I am [trying] {"entity":"look_only","value":"true"} selling {"entity":"purchase_category","value":"sell"} a house .
+    - I am [trying] {"entity":"look_only","value":"true"} buying  {"entity":"purchase_category","value":"buy"}a house
+- intent: name
+  examples: |
+    - [ramesh] (name)
+    - [shyam] (name)
+    - [ram shrestha] (name)
+    - [jon snow] (name)
+    - [harihar pandey] (name)
+    - [suwas thapa] (name)
+    - [ramdev yadav] (name)
+    - [kahdka bahadur thapaliya] (name)
+    - [shree ram thapa] (name)
+    - [Ram thapa] (name)
+
+- intent: call_back
+  examples: |
+    - Would you mind calling me back? 
+    - Can you call me later?
+    - Please call back
+    - Would you mind calling?
+    - Please call me 
+    - Can you send me your number.
+    - I want to talk on phone
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

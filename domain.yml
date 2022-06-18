@@ -1,0 +1,115 @@
+version: "3.1"
+intents:
+  - greet
+  - business_domain
+  - goodbye
+  - affirm
+  - deny
+  - reply_name
+  - mood_unhappy
+  - mood_happy
+  - bot_challenge
+  - eoi_form
+  - email_id
+  - number
+  - listings
+  - name 
+  - agent_time 
+  - call_back
+  - out_of_scope
+responses:
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_did_that_help:
+  - text: "Did that help you?"
+  utter_happy:
+  - text: "Great, carry on!"
+  utter_goodbye:
+  - text: "Bye"
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  utter_buyer_menu:
+  - text: "What would you like to go with?"
+    buttons:
+    - title: "view existing listings"
+      payload: "/listings"
+    - title: "fill up an EOI form"
+      payload: "/eoi_form"
+    - title: "Book time with agent"
+      payload: "/agent_time"
+    - title: "request callback "
+      payload: "/callback"
+entities :
+- user_name
+- purchase_category
+- look_only
+- name
+- email 
+- phone
+- movement_timeline 
+
+slots:
+  user_name:
+    type: text
+    mappings:
+    - type : from_entity
+      entity : user_name 
+    influence_conversation: false
+  name: 
+      type: text
+      mappings:
+      - type : from_entity
+        entity : name
+      influence_conversation: false
+  email:
+      type: any
+      mappings:
+      - type : from_entity
+        entity : email
+      influence_conversation: false
+  phone:
+      type: any
+      mappings:
+      - type : from_entity
+        entity : phone
+      influence_conversation: false
+  movement_timeline:
+      type: any
+      mappings:
+      - type: from_entity
+        entity : email
+      influence_conversation: false
+  look_only:
+      influence_conversation: true
+      type: bool
+      mappings:
+      - type : from_entity
+        entity : look_only 
+  purchase_category:
+      influence_conversation: true
+      type: categorical
+      values:
+        - buy
+        - rent
+        - sell
+      mappings:
+      - type : from_entity
+        entity : purchase_category
+  
+actions :
+  - action_goodbye
+  - action_greetings_from_bot 
+  - action_ask_bussiness_interest
+  - action_EOI_form
+  - action_appraisal_form
+  - action_form_submit
+  - action_send_listings 
+  - action_book_time_with_agent
+  - action_time_scheduled_agent
+  - action_good_to_go
+  - action_request_callback
+  - action_out_of_scope
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

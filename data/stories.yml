@@ -1,0 +1,338 @@
+version: "3.1"
+stories:
+- story: Buy_item_EOI path
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - intent: business_domain
+  - slot_was_set:
+    - purchase_category: buy
+    - look_only: false
+  - action: utter_buyer_menu 
+  - intent: eoi_form
+  - action: action_EOI_form
+  - action: action_form_submit
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Buy_item_send_listings
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - intent: business_domain
+  - action: action_good_to_go
+  - slot_was_set:
+    - purchase_category: buy
+    - look_only: false
+  - action: utter_buyer_menu 
+  - intent: listings
+  - action: action_send_listings
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Buy_item_talk_to_agent
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - intent: business_domain
+  - slot_was_set:
+    - purchase_category: buy
+    - look_only: false
+  - action: utter_buyer_menu 
+  - intent: agent_time
+  - action: action_book_time_with_agent
+  - action: action_time_scheduled_agent
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Buy_item_only_look
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - action: action_ask_bussiness_interest
+  - slot_was_set:
+    - purchase_category: buy
+    - look_only: true
+  - action: action_send_listings
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Sell_item_EOI path
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - intent: business_domain
+  - slot_was_set:
+    - purchase_category: sell
+    - look_only: false
+  - action: action_appraisal_form
+  - action: action_form_submit
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Rent_item_EOI path
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - intent: business_domain
+  - slot_was_set:
+    - purchase_category: rent
+    - look_only: false
+  - action: utter_buyer_menu 
+  - intent: eoi_form
+  - action: action_EOI_form
+  - action: action_form_submit
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Rent_item_send_listings
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - intent: business_domain
+  - action: action_good_to_go
+  - slot_was_set:
+    - purchase_category: buy
+    - look_only: false
+  - action: utter_buyer_menu 
+  - intent: listings
+  - action: action_send_listings
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Rent_item_talk_to_agent
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - intent: business_domain
+  - slot_was_set:
+    - purchase_category: rent
+    - look_only: false
+  - action: utter_buyer_menu 
+  - intent: agent_time
+  - action: action_book_time_with_agent
+  - action: action_time_scheduled_agent
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Rent_item_only_look
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - action: action_ask_bussiness_interest
+  - slot_was_set:
+    - purchase_category: buy
+    - look_only: true
+  - action: action_send_listings
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: RequestCallback_buy
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - action: action_ask_bussiness_interest
+  - slot_was_set:
+    - purchase_category: buy
+    - look_only: false
+  - intent: call_back
+  - action: action_request_callback
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: RequestCallback_rent
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - action: action_ask_bussiness_interest
+  - slot_was_set:
+    - purchase_category: rent
+    - look_only: false
+  - intent: call_back
+  - action: action_request_callback
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: RequestCallback_sell
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - action: action_ask_bussiness_interest
+  - slot_was_set:
+    - purchase_category: sell
+    - look_only: false
+  - intent: call_back
+  - action: action_request_callback
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Look only path1
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - intent: business_domain
+  - slot_was_set:
+    - purchase_category: sell
+    - look_only: true 
+  - action: action_send_listings
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Look only path2
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - intent: business_domain
+  - slot_was_set:
+    - purchase_category: buy
+    - look_only: true 
+  - action: action_send_listings
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Look only path3
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - intent: business_domain
+  - slot_was_set:
+    - purchase_category: rent
+    - look_only: true 
+  - action: action_send_listings
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_ask_bussiness_interest
+  - intent: affirm
+  - action: action_goodbye
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: action_goodbye
+- story: happy path 2
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: mood_happy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Out_of_scope_path1
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: out_of_scope
+  - action: action_out_of_scope
+  - intent : deny
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
+- story: Out_of_scope_path2
+  steps:
+  - intent: greet
+  - action: action_greetings_from_bot
+  - intent: reply_name
+  - slot_was_set:
+    - user_name: Reetu
+  - action: action_ask_bussiness_interest
+  - intent: out_of_scope
+  - action: action_out_of_scope
+  - intent : affirm
+  - action: action_ask_bussiness_interest
+  - intent: business_domain
+  - slot_was_set:
+    - purchase_category: rent
+    - look_only: true 
+  - action: action_send_listings
+  - action: action_good_to_go
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_goodbye
