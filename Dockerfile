@@ -1,9 +1,9 @@
-FROM python:3.6.9
+FROM python:3.8.10
 RUN apt-get update -y
 RUN apt-get install -y python3-pip python3-dev build-essential
 RUN apt install -y supervisor
 RUN pip install --upgrade pip==21.3.1
-RUN pip install rasa==2.8.12
+RUN pip install rasa==3.2.1
 #ENV RASA_X_PASSWORD="ChatbotDataTrainer"
 ADD . /app
 WORKDIR /app
